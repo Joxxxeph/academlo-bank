@@ -1,7 +1,7 @@
 import { catchAsync } from "../../common/errors/catchAsync.js";
 import { UserService } from "./user.service.js";
 import { validateLogin, validateUser } from "./user.schema.js";
-import { AppError } from '../../common/errors/appError.js';
+import { AppError } from '../../common/errors/appError.js'
 import { generateJWT } from "../../config/plugins/generate-jwt.plugin.js";
 
 export const singUp = catchAsync( async (req, res, next) => {
@@ -43,7 +43,7 @@ export const login = catchAsync( async (req, res, next) => {
     if(!user){
       return next(new AppError('This account does not exist jajja', 404))
     }
-
+ 
     return res.status(200).json({
       message: 'Are u logged'
     })
